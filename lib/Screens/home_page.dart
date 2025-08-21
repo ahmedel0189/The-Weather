@@ -10,6 +10,13 @@ class HomePage extends StatelessWidget {
       // backgroundColor: Colors.lightBlue,
       backgroundColor: Colors.white,
       appBar: AppBar(
+        leading: IconButton(
+          onPressed: () {},
+          icon: const Icon(
+            Icons.search,
+            color: Colors.white,
+          ),
+        ),
         title: Center(
           child: const Text(
             "THEWeather",
@@ -22,7 +29,7 @@ class HomePage extends StatelessWidget {
         ),
         backgroundColor: Colors.blue[900],
       ),
-      body: NoWeatherNow()
+      body: NoWeatherNow(),
     );
   }
 }
