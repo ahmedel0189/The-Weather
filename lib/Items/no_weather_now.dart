@@ -9,7 +9,7 @@ class NoWeatherNow extends StatelessWidget {
       padding: EdgeInsetsGeometry.all(16),
       child: Center(
         child: Text(
-          'Hi,There is no Weather right , \nplease Start searching 🔎.',
+          'Hi,There is no Weather right now, \nplease Start searching 🔎.',
           style: TextStyle(
             fontSize: 22,
             fontFamily: 'Libre_Baskerville',
