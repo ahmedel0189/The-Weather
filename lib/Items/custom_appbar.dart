@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:the_weather/Screens/search_view.dart';
 
 class CustomAppbar extends StatelessWidget
     implements PreferredSizeWidget {
@@ -12,7 +13,15 @@ class CustomAppbar extends StatelessWidget
     return AppBar(
       actions: [
         IconButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) =>
+                    SearchView(),
+              ),
+            );
+          },
           icon: const Icon(
             Icons.search,
             color: Colors.white,

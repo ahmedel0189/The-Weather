@@ -1,15 +1,27 @@
 import 'package:flutter/material.dart';
+import 'package:the_weather/Items/dynamic_search_feild.dart';
 
-class SearchView extends StatefulWidget {
+class SearchView extends StatelessWidget {
   const SearchView({super.key});
 
   @override
-  State<SearchView> createState() => _SearchViewState();
-}
-
-class _SearchViewState extends State<SearchView> {
-  @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      // to make the page reorder itself after the keyboard appeare
+      resizeToAvoidBottomInset: true,
+
+      appBar: AppBar(
+        backgroundColor: Colors.orange,
+        title: const Text(
+          "Search the City",
+          style: TextStyle(
+            fontFamily: 'Libre_Baskerville',
+            color: Colors.black,
+            fontWeight: FontWeight.w500,
+          ),
+        ),
+      ),
+      body: DynamicSearchFeild(),
+    );
   }
 }
