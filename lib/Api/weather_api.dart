@@ -11,7 +11,7 @@ class WeatherApi {
   WeatherApi({required this.dio});
 
   Future<WeatherModel> getweather({
-    required String cityName,
+    String cityName ="Mansoura, Egypt",
   }) async {
     try {
       Response response = await dio.get(
