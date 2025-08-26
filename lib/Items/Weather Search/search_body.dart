@@ -6,6 +6,8 @@ import 'package:flutter/material.dart';
 import 'package:the_weather/Api/weather_api.dart';
 import 'package:the_weather/models/weather_model.dart';
 
+WeatherModel? weatherModel;
+
 class SearchBody extends StatefulWidget {
   const SearchBody({super.key});
 
@@ -33,7 +35,8 @@ class _SearchBodyState extends State<SearchBody> {
     final isKeyboardOpen = bottomInset > 0;
     return GestureDetector(
       // when click on the screen the keybord disappere
-      onTap: () => FocusScope.of(context).unfocus(),
+      onTap: () =>
+          FocusScope.of(context).unfocus(),
       child: SafeArea(
         child: SizedBox.expand(
           // AnimatedAlign here to move the searchbar up and dwon
@@ -61,12 +64,9 @@ class _SearchBodyState extends State<SearchBody> {
                       value.trim().isEmpty
                       ? "Mansoura, Egypt"
                       : value;
-                  WeatherModel weatherModel =
-                      await WeatherApi(
-                        dio: Dio(),
-                      ).getweather(
-                        cityName: city,
-                      );
+                  weatherModel = await WeatherApi(
+                    dio: Dio(),
+                  ).getweather(cityName: city);
                   Navigator.pop(context);
                   // log(weatherModel.cityName);
                 },
