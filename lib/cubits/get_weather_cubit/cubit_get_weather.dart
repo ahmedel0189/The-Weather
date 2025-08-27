@@ -7,11 +7,11 @@ import 'package:the_weather/models/weather_model.dart';
 class GetWeatherCubit
     extends Cubit<WeatherStates> {
   GetWeatherCubit() : super(WeatherInitialState());
-  getweather({required value}) async {
+  getweather( {required cityNmae}) async {
     try {
-  final city = value.trim().isEmpty
+  final city = cityNmae.trim().isEmpty
       ? "Mansoura, Egypt"
-      : value;
+      : cityNmae;
   // ignore: unused_local_variable
   WeatherModel weatherModel= await WeatherApi(
     dio: Dio(),

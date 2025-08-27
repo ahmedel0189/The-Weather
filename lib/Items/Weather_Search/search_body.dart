@@ -2,7 +2,8 @@
 
 // import 'dart:developer';
 import 'package:flutter/material.dart';
-import 'package:the_weather/models/weather_model.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:the_weather/cubits/get_weather_cubit/cubit_get_weather.dart';
 
 class SearchBody extends StatefulWidget {
   const SearchBody({super.key});
@@ -56,6 +57,11 @@ class _SearchBodyState extends State<SearchBody> {
                 textInputAction:
                     TextInputAction.search,
                 onSubmitted: (value) async {
+                  var getWeatherCubit =
+                      BlocProvider.of<
+                        GetWeatherCubit
+                      >(context);
+                  getWeatherCubit.getweather(cityNmae:value);
                   Navigator.pop(context);
                   // log(weatherModel.cityName);
                 },
