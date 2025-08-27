@@ -12,14 +12,12 @@ class GetWeatherCubit
   final city = cityNmae.trim().isEmpty
       ? "Mansoura, Egypt"
       : cityNmae;
-  // ignore: unused_local_variable
   WeatherModel weatherModel= await WeatherApi(
     dio: Dio(),
   ).getweather(cityName: city);
-  // log(weatherModel.cityName);
-  emit(WeatherLoadedState());
+  emit(WeatherLoadedState(weatherModel));
 }  catch (e) {
-    emit(WeatherFailureState());
+    emit(WeatherFailureState(e.toString()));
 
 }
   }
