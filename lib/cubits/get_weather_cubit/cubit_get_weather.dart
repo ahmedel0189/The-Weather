@@ -6,19 +6,20 @@ import 'package:the_weather/models/weather_model.dart';
 
 class GetWeatherCubit
     extends Cubit<WeatherStates> {
-  GetWeatherCubit() : super(WeatherInitialState());
-  getweather( {required cityNmae}) async {
+  GetWeatherCubit()
+    : super(WeatherInitialState());
+  late WeatherModel? weatherModel;
+  getweather({required cityNmae}) async {
     try {
-  final city = cityNmae.trim().isEmpty
-      ? "Mansoura, Egypt"
-      : cityNmae;
-  WeatherModel weatherModel= await WeatherApi(
-    dio: Dio(),
-  ).getweather(cityName: city);
-  emit(WeatherLoadedState(weatherModel));
-}  catch (e) {
-    emit(WeatherFailureState(e.toString()));
-
-}
+      final city = cityNmae.trim().isEmpty
+          ? "Mansoura, Egypt"
+          : cityNmae;
+      weatherModel = await WeatherApi(
+        dio: Dio(),
+      ).getweather(cityName: city);
+      emit(WeatherLoadedState(weatherModel!));
+    } catch (e) {
+      emit(WeatherFailureState(e.toString()));
+    }
   }
 }
