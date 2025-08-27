@@ -4,8 +4,6 @@
 import 'package:flutter/material.dart';
 import 'package:the_weather/models/weather_model.dart';
 
-WeatherModel? weatherModel;
-
 class SearchBody extends StatefulWidget {
   const SearchBody({super.key});
 

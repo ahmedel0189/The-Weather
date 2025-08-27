@@ -1,6 +1,6 @@
 class WeatherStates {}
 
-class InitialState extends WeatherStates {}
+class WeatherInitialState extends WeatherStates {}
 
 class WeatherLoadedState extends WeatherStates {}
 
