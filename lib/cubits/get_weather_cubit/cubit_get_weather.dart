@@ -8,13 +8,18 @@ class GetWeatherCubit
     extends Cubit<WeatherStates> {
   GetWeatherCubit() : super(InitialState());
   getweather({required value}) async {
-    final city = value.trim().isEmpty
-        ? "Mansoura, Egypt"
-        : value;
-    weatherModel = await WeatherApi(
-      dio: Dio(),
-    ).getweather(cityName: city);
-    // log(weatherModel.cityName);
-    emit(state);
+    try {
+  final city = value.trim().isEmpty
+      ? "Mansoura, Egypt"
+      : value;
+  weatherModel = await WeatherApi(
+    dio: Dio(),
+  ).getweather(cityName: city);
+  // log(weatherModel.cityName);
+  emit(WeatherLoadedState());
+}  catch (e) {
+    emit(WeatherFailureState());
+
+}
   }
 }
