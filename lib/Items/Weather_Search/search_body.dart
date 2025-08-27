@@ -1,9 +1,7 @@
 // ignore_for_file: unused_local_variable
 
 // import 'dart:developer';
-import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
-import 'package:the_weather/Api/weather_api.dart';
 import 'package:the_weather/models/weather_model.dart';
 
 WeatherModel? weatherModel;
@@ -60,13 +58,6 @@ class _SearchBodyState extends State<SearchBody> {
                 textInputAction:
                     TextInputAction.search,
                 onSubmitted: (value) async {
-                  final city =
-                      value.trim().isEmpty
-                      ? "Mansoura, Egypt"
-                      : value;
-                  weatherModel = await WeatherApi(
-                    dio: Dio(),
-                  ).getweather(cityName: city);
                   Navigator.pop(context);
                   // log(weatherModel.cityName);
                 },

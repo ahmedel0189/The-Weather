@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:the_weather/Items/Weather%20Search/dynamic_search_feild.dart';
+import 'package:the_weather/Items/Weather_Search/dynamic_search_feild.dart';
 
 class SearchView extends StatelessWidget {
   const SearchView({super.key});
