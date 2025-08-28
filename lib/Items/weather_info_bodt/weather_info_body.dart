@@ -4,9 +4,6 @@ import 'package:intl/intl.dart';
 import 'package:the_weather/cubits/get_weather_cubit/cubit_get_weather.dart';
 import 'package:the_weather/models/weather_model.dart';
 
-DateTime StringToDateTime(String value) {
-  return DateTime.parse(value);
-}
 
 class WeatherInfoBody extends StatefulWidget {
   const WeatherInfoBody({
