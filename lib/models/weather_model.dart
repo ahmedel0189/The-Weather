@@ -1,6 +1,6 @@
 class WeatherModel {
   final String cityName;
-  final String timeOfUpdate;
+  final DateTime timeOfUpdate;
   final String? image;
   final double temp;
   final double avrgTemp;
@@ -24,8 +24,8 @@ class WeatherModel {
     return WeatherModel(
       cityName: json['location']['name'],
       timeOfUpdate:
-          json['current']['last_updated'],
-      // image: json[''],
+          DateTime.parse(json['current']['last_updated']) ,
+      image: json['current']['condition']['icon'],
       temp: json['current']['temp_c'],
       avrgTemp:
           json['forecast']['forecastday'][0]['day']['avgtemp_c'],

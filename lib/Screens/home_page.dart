@@ -29,7 +29,10 @@ class _HomePageState extends State<HomePage> {
                 return NoWeatherNow();
               } else if (state
                   is WeatherLoadedState) {
-                return WeatherInfoBody();
+                return WeatherInfoBody(
+                  weatherModel:
+                      state.weatherModel,
+                );
               } else {
                 return Text(
                   'OOps. there was an erroe',
