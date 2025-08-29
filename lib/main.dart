@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:the_weather/Screens/home_page.dart';
 import 'package:the_weather/cubits/get_weather_cubit/states_get_weather.dart';
-import 'package:the_weather/material_app_methode.dart';
+import 'package:the_weather/colors_methodes.dart';
 import 'package:the_weather/cubits/get_weather_cubit/cubit_get_weather.dart';
 
 class THEWeather extends StatelessWidget {
@@ -21,7 +21,7 @@ class THEWeather extends StatelessWidget {
               return MaterialApp(
                 theme: ThemeData(
                   primarySwatch:
-                      GetThemeColor.getMainColor(
+                      ColorsMethodes.getMainColor(
                         BlocProvider.of<
                               GetWeatherCubit
                             >(context)
@@ -30,7 +30,7 @@ class THEWeather extends StatelessWidget {
                       ),
                   colorScheme: ColorScheme.fromSwatch(
                     primarySwatch:
-                        GetThemeColor.getMainColor(
+                        ColorsMethodes.getMainColor(
                           BlocProvider.of<
                                 GetWeatherCubit
                               >(context)

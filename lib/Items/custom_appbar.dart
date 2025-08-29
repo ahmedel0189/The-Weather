@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:the_weather/Screens/search_view.dart';
 
+
 class CustomAppbar extends StatelessWidget
     implements PreferredSizeWidget {
   const CustomAppbar({super.key});
@@ -38,7 +39,12 @@ class CustomAppbar extends StatelessWidget
         ),
       ),
 
-      backgroundColor:Theme.of(context).colorScheme.primary
+      backgroundColor: Theme.of(
+        context,
+      ).colorScheme.primary,
+      elevation: 10, // higher = stronger shadow
+      shadowColor:
+          Colors.black, // custom shadow color
     );
   }
 }
