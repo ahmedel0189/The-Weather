@@ -92,7 +92,7 @@ class _WeatherInfoBodyState
             ),
             SizedBox(height: 32),
             Text(
-              weatherModel.weatherStatus,
+              weatherModel.weathercondition,
               style: TextStyle(
                 fontSize: 25,
                 fontWeight: FontWeight.bold,

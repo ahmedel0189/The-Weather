@@ -11,7 +11,7 @@ class SearchView extends StatelessWidget {
       resizeToAvoidBottomInset: true,
 
       appBar: AppBar(
-        backgroundColor: Colors.orange,
+        backgroundColor: Theme.of(context).colorScheme.primary,
         title: const Text(
           "Search the City",
           style: TextStyle(

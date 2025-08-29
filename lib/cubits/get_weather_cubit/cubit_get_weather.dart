@@ -8,7 +8,7 @@ class GetWeatherCubit
     extends Cubit<WeatherStates> {
   GetWeatherCubit()
     : super(WeatherInitialState());
-  late WeatherModel? weatherModel;
+  WeatherModel? weatherModel;
   getweather({required cityNmae}) async {
     try {
       final city = cityNmae.trim().isEmpty

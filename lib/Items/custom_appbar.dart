@@ -38,7 +38,7 @@ class CustomAppbar extends StatelessWidget
         ),
       ),
 
-      backgroundColor: Colors.blue[900],
+      backgroundColor:Theme.of(context).colorScheme.primary
     );
   }
 }
