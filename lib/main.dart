@@ -11,6 +11,7 @@ class THEWeather extends StatelessWidget {
     return BlocProvider(
       create: (context) => GetWeatherCubit(),
       child: MaterialApp(
+        theme: ThemeData.dark(),
         title: "THE Weather",
         debugShowCheckedModeBanner: false,
         home: HomePage(),

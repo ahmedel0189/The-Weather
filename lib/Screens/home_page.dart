@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:the_weather/Items/custom_appbar.dart';
-import 'package:the_weather/Items/no_weather_now.dart';
-import 'package:the_weather/Items/weather_info_bodt/weather_info_body.dart';
+import 'package:the_weather/Items/weather_info_body/no_weather_now.dart';
+import 'package:the_weather/Items/weather_info_body/weather_info_body.dart';
 import 'package:the_weather/cubits/get_weather_cubit/cubit_get_weather.dart';
 import 'package:the_weather/cubits/get_weather_cubit/states_get_weather.dart';
 
